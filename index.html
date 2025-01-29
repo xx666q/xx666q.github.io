@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>个人博客</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -136,6 +136,15 @@
         <!-- 访问计数器 -->
         <div class="visitor-counter">
             <p>你是第 <span id="visitorCount">1</span> 个来看我的</p>
+        </div>
+
+        <!-- 点赞功能 -->
+        <div class="like-container">
+            <button class="like-button" id="likeButton">
+                <i class="fas fa-heart"></i>
+                <span class="like-count" id="likeCount">0</span>
+            </button>
+            <div class="like-message">点个赞吧~</div>
         </div>
 
         <!-- 编程部分 -->
