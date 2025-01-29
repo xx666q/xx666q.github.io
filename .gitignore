@@ -1,0 +1,76 @@
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 编辑器文件
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 环境文件
+.env
+.env.local
+.env.*.local
+
+# 个人文件夹
+AppData/
+Contacts/
+Documents/
+Downloads/
+Favorites/
+Links/
+Music/
+Pictures/
+Saved Games/
+Searches/
+Videos/
+OneDrive/
+
+# 系统文件
+NTUSER.DAT*
+ntuser.*
+.bash_history
+.gitconfig
+.thumbnails/
+.ipynb_checkpoints/
+.ipython/
+.jupyter/
+.leigod/
+.mitmproxy/
+.oracle_jre_usage/
+.android/
+.anaconda/
+.conda/
+.continuum/
+.cursor/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg 
