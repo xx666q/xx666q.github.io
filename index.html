@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人博客</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 加载动画 -->
+    <div class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-progress">
+                <div class="progress-bar"></div>
+            </div>
+            <div class="loading-text">正在加载中...</div>
+        </div>
+    </div>
+
+    <!-- 顶部导航 -->
+    <header>
+        <div class="logo-container">
+            <div class="logo" id="avatar">
+            <img src="photo\tou.jpg" alt="个人头像">
+            </div>
+            <div class="logo-name">Nartsuki</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home" class="active">首页</a></li>
+                <li><a href="#programming">编程</a></li>
+                <li><a href="#photography">摄影</a></li>
+                <li><a href="#share">分享</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 侧边导航栏 -->
+    <div class="side-nav">
+        <a href="#home"><i class="fas fa-lantern"></i><span>首页</span></a>
+        <a href="#programming"><i class="fas fa-scroll"></i><span>编程</span></a>
+        <a href="#photography"><i class="fas fa-camera"></i><span>摄影</span></a>
+        <a href="#share"><i class="fas fa-envelope-open-text"></i><span>分享</span></a>
+    </div>
+
+    <!-- 头像弹出层 -->
+    <div class="avatar-modal">
+        <span class="close-modal">&times;</span>
+        <img src="photo\tou.jpg" alt="个人头像">
+    </div>
+
+    <!-- 弹幕发射器 -->
+    <div class="rocket-launcher">
+        <div class="rocket-icon">
+            <i class="fas fa-gift"></i>
+        </div>
+        <div class="message-input">
+            <input type="text" placeholder="你想要对我说什么呢" id="danmakuInput">
+            <button type="button" id="sendDanmaku">发射</button>
+        </div>
+    </div>
+
+    <!-- 弹幕区域 -->
+    <div class="danmaku-section">
+        <div class="danmaku-container">
+            <div class="danmaku-area"></div>
+        </div>
+    </div>
+
+    <!-- 历史弹幕记录面板 -->
+    <div class="danmaku-history">
+        <div class="history-toggle">
+            <i class="fas fa-history"></i>
+        </div>
+        <div class="history-header">
+            <h3>弹幕记录</h3>
+        </div>
+        <div class="history-list">
+            <!-- 历史弹幕将在这里动态添加 -->
+        </div>
+    </div>
+
+    <!-- 主要内容区域 -->
+    <main>
+        <!-- 首页部分 -->
+        <section id="home" class="section">
+            <div class="home-flex-container">
+                <div class="intro-section">
+                    <div class="intro-box">
+                        <h2>Expectations 2025</h2>
+                        <ul>
+                            <li>Strength!</li>
+                            <li>Let's speak English</li>
+                            <li>Make money! Make money! Make money!</li>
+                            <li>I'm a handsome guy</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- AI 对话模块 -->
+                    <div class="ai-chat-box">
+                        <div class="chat-header">
+                            <h3>AI 助手</h3>
+                        </div>
+                        <div class="chat-messages" id="chatMessages">
+                            <div class="message ai-message">
+                                <p>你好！我是你的 AI 助手，有什么我可以帮你的吗？</p>
+                            </div>
+                        </div>
+                        <div class="chat-input">
+                            <input type="text" id="userInput" placeholder="输入你的问题..." autocomplete="off" writingsuggestions="off">
+                            <button type="button" id="sendMessage">发送</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="answer-book-container">
+                    <div class="answer-book-intro">
+                        <p>有心事的话，就问问答案之书吧</p>
+                    </div>
+
+                    <div class="answer-book">
+                        <div class="book-cover">
+                            <img src="clipboard-image-1737474512.png" alt="答案之书封面">
+                            <p class="book-hint">点击获取答案</p>
+                        </div>
+                        <div class="book-answer">
+                            <p></p>
+                            <button class="ask-again">再问一次</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 访问计数器 -->
+        <div class="visitor-counter">
+            <p>你是第 <span id="visitorCount">1</span> 个来看我的</p>
+        </div>
+
+        <!-- 编程部分 -->
+        <section id="programming" class="section">
+            <h2 class="page-title">编程天地</h2>
+            <div class="programming-container">
+                <!-- GitHub热门项目 -->
+                <div class="github-trending">
+                    <h3 class="section-title">GitHub 每周热门 <i class="fab fa-github"></i></h3>
+                    <div class="trending-grid">
+                        <div class="github-card">
+                            <div class="repo-header">
+                                <i class="fas fa-star"></i>
+                                <a href="https://github.com/microsoft/PowerToys" target="_blank">microsoft/PowerToys</a>
+                            </div>
+                            <p class="repo-desc">Windows系统工具集，提升生产力</p>
+                            <div class="repo-stats">
+                                <span><i class="fas fa-star"></i> 98.2k</span>
+                                <span><i class="fas fa-code-branch"></i> 5.6k</span>
+                                <span class="language"><span class="lang-color" style="background-color: #178600"></span>C#</span>
+                            </div>
+                        </div>
+                        <div class="github-card">
+                            <div class="repo-header">
+                                <i class="fas fa-star"></i>
+                                <a href="https://github.com/openai/whisper" target="_blank">openai/whisper</a>
+                            </div>
+                            <p class="repo-desc">强大的语音识别模型</p>
+                            <div class="repo-stats">
+                                <span><i class="fas fa-star"></i> 76.5k</span>
+                                <span><i class="fas fa-code-branch"></i> 8.2k</span>
+                                <span class="language"><span class="lang-color" style="background-color: #3572A5"></span>Python</span>
+                            </div>
+                        </div>
+                        <div class="github-card">
+                            <div class="repo-header">
+                                <i class="fas fa-star"></i>
+                                <a href="https://github.com/vercel/next.js" target="_blank">vercel/next.js</a>
+                            </div>
+                            <p class="repo-desc">React框架，用于生产环境的全栈Web应用</p>
+                            <div class="repo-stats">
+                                <span><i class="fas fa-star"></i> 115k</span>
+                                <span><i class="fas fa-code-branch"></i> 24.8k</span>
+                                <span class="language"><span class="lang-color" style="background-color: #F1E05A"></span>JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trending-footer">
+                        <a href="https://github.com/trending" target="_blank" class="view-more">
+                            查看更多 <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 个人项目展示 -->
+                <div class="personal-projects">
+                    <h3 class="section-title">我的开发程序</h3>
+                    <div class="project-grid">
+                        <!-- 如果没有项目，显示开发中状态 -->
+                        <div class="development-status">
+                            <div class="status-content">
+                                <i class="fas fa-code-branch"></i>
+                                <p>正在全力开发中.......</p>
+                                <div class="coding-animation">
+                                    <span class="typing-dots">
+                                        <span>.</span>
+                                        <span>.</span>
+                                        <span>.</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 摄影部分 -->
+        <section id="photography" class="section">
+            <h2 class="page-title">摄影</h2>
+            
+            <!-- 历史摄影活动 -->
+            <div class="photo-activities">
+                <h3 class="section-title">历史摄影活动</h3>
+                <div class="activity-grid">
+                    <!-- 重庆之旅 -->
+                    <div class="activity-card">
+                        <div class="activity-cover">
+                            <img src="photo/历史摄影/重庆/微信图片_20250127212812.jpg" alt="重庆之旅">
+                            <div class="activity-info">
+                                <h4>重庆之旅</h4>
+                                <p class="activity-date">2024年1月</p>
+                                <button class="view-gallery">查看图集</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 预留更多活动卡片位置 -->
+                </div>
+            </div>
+            
+            <!-- 图集弹窗 -->
+            <div class="gallery-modal">
+                <div class="gallery-content">
+                    <button class="close-gallery"><i class="fas fa-times"></i></button>
+                    <h3 class="gallery-title">重庆之旅</h3>
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="photo/历史摄影/重庆/微信图片_20250127212812.jpg" alt="山城步道文字">
+                            <div class="photo-intro">
+                                <h5>山城步道文字</h5>
+                                <p>在山城步道附件拍摄的，当时就是看见这几个字觉得很不错，就举起相机拍了一张</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="photo/历史摄影/重庆/微信图片_20250127212802.jpg" alt="夜晚灯笼">
+                            <div class="photo-intro">
+                                <h5>夜晚灯笼</h5>
+                                <p>当时逛完了山城步道之后天就渐渐黑了下来，看见这些发光的灯笼觉得甚是好看，就随手拍了一张</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="photo/历史摄影/重庆/微信图片_20250127212759.jpg" alt="山城步道包包">
+                            <div class="photo-intro">
+                                <h5>山城步道印记</h5>
+                                <p>这张就是在山城步道中拍的，觉得这个包能显出我来过重庆的</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="photo/历史摄影/重庆/微信图片_20250127212749.jpg" alt="洪崖洞夜景">
+                            <div class="photo-intro">
+                                <h5>洪崖洞夜景</h5>
+                                <p>这张就是在洪崖洞对面拍的，很标致的游客打卡照，对吧？</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="photo/历史摄影/重庆/微信图片_20250127212743.jpg" alt="山城步道全景">
+                            <div class="photo-intro">
+                                <h5>山城步道全景</h5>
+                                <p>这个山城步道拍的，当时觉得很壮观，但是当时的雾霾真的是很大，后期修了一下才能用</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="photo/历史摄影/重庆/微信图片_20250127212740.jpg" alt="夜景尝试">
+                            <div class="photo-intro">
+                                <h5>夜景尝试</h5>
+                                <p>这就是没带三脚架的下场，本来想拍个慢门的，结果糊了</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="photo/历史摄影/重庆/微信图片_20250127212734.jpg" alt="重庆印象">
+                            <div class="photo-intro">
+                                <h5>重庆印象</h5>
+                                <p>怎么说，这很重庆，对吧？</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="photo/历史摄影/重庆/微信图片_20250127212727.jpg" alt="魁星楼视角">
+                            <div class="photo-intro">
+                                <h5>魁星楼视角</h5>
+                                <p>魁星楼哪里拍的，从上往下看，刚好看见有个警车去疏通交通</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="photo/历史摄影/重庆/微信图片_20250127212719.jpg" alt="黄色法拉利">
+                            <div class="photo-intro">
+                                <h5>黄色法拉利</h5>
+                                <p>黄色法拉利！！！</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 佳作展示 -->
+            <div class="masterpiece-showcase">
+                <h3 class="section-title">佳作展示 <span class="note">（主观感受）</span></h3>
+                <div class="masterpiece-grid">
+                    <div class="gallery-item">
+                        <img src="photo/历史摄影/佳作/微信图片_20250127215521.jpg" alt="晚霞">
+                        <div class="photo-intro">
+                            <h5>晚霞之美</h5>
+                            <p>当时在学校拍的，我记得是去上晚课，突然发现晚霞真的太美了！</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="photo/历史摄影/佳作/微信图片_20250127215522.jpg" alt="彼岸花">
+                        <div class="photo-intro">
+                            <h5>升仙湖彼岸花</h5>
+                            <p>这是和好伙伴们一起去成都的升仙湖拍的彼岸花，本来都觉得没什么希望了，但晚霞的光刚好照过来，还是非常好看</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="photo/历史摄影/佳作/微信图片_20250127215531.jpg" alt="环球中心">
+                        <div class="photo-intro">
+                            <h5>车水马龙</h5>
+                            <p>环球中心，这些星星点点就是车水马龙</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="photo/历史摄影/佳作/微信图片_20250127215543.jpg" alt="音乐公园">
+                        <div class="photo-intro">
+                            <h5>成都音乐公园</h5>
+                            <p>成都音乐公园，无论白天还是晚上都很好看的</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="photo/历史摄影/佳作/微信图片_20250127215548.jpg" alt="荷花">
+                        <div class="photo-intro">
+                            <h5>文化公园荷花</h5>
+                            <p>成都文化公园的荷花，我很喜欢这个色彩，他们都说不好看，我觉得还是很好看啊</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="photo/历史摄影/佳作/微信图片_20250127215551.jpg" alt="夜骑">
+                        <div class="photo-intro">
+                            <h5>绿道夜景</h5>
+                            <p>这是和朋友一起夜骑天府绿道的时候碰巧看见的，这些花在路灯下真挺好看的，建议亲自去夜骑天府绿道</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="photo/历史摄影/佳作/微信图片_20250127215554.jpg" alt="校园">
+                        <div class="photo-intro">
+                            <h5>心情美好的一天</h5>
+                            <p>在学校随机拍的，为什么选这张？因为那天心情超级好！</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="photo/历史摄影/佳作/微信图片_20250127215555.jpg" alt="峨眉山晚霞">
+                        <div class="photo-intro">
+                            <h5>峨眉金顶晚霞</h5>
+                            <p>24年1月份组队爬峨眉山，金顶晚霞yyds，这张是我源哥拍的，我很喜欢（借用了）</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="photo/历史摄影/佳作/微信图片_20250127215740.jpg" alt="川西冰雪">
+                        <div class="photo-intro">
+                            <h5>川西壮丽冰雪</h5>
+                            <p>去川西鱼子西的时候拍的，一大片的山川还是非常的震撼，这辈子没见过这么多的冰。</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="photo/历史摄影/佳作/微信图片_20250127215749.jpg" alt="邛海">
+                        <div class="photo-intro">
+                            <h5>邛海之水</h5>
+                            <p>邛海的水，哈哈哈</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="photo/历史摄影/佳作/微信图片_202501272155551.jpg" alt="有趣">
+                        <div class="photo-intro">
+                            <h5>趣味一刻</h5>
+                            <p>挺有意思的，不是吗？</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 分享部分 -->
+        <section id="share" class="section">
+            <h2 class="page-title">新春祝福</h2>
+            <div class="spring-festival-container">
+                <div class="snake-year-decoration">
+                    <i class="fas fa-dragon snake-icon"></i>
+                    <div class="lantern left">
+                        <i class="fas fa-lantern"></i>
+                    </div>
+                    <div class="lantern right">
+                        <i class="fas fa-lantern"></i>
+                    </div>
+                </div>
+                <div class="festival-greeting">
+                    <h3>金蛇献瑞 万事如意</h3>
+                    <div class="greeting-text">
+                        <p>辞旧迎新春满园，</p>
+                        <p>金蛇起舞福满门。</p>
+                        <p>事业腾达步步高，</p>
+                        <p>阖家欢乐年年好！</p>
+                    </div>
+                    <div class="blessing-tags">
+                        <span class="blessing-tag">身体健康</span>
+                        <span class="blessing-tag">财运亨通</span>
+                        <span class="blessing-tag">事业有成</span>
+                        <span class="blessing-tag">阖家幸福</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 社交媒体链接 -->
+    <footer>
+        <div class="social-links">
+            <div class="social-icons">
+                <a href="https://v.douyin.com/ifeVkBvN/" target="_blank" title="抖音"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.xiaohongshu.com/user/profile/62ea4a7c000000001f017230" target="_blank" title="小红书"><i class="fas fa-book"></i></a>
+                <a href="https://b23.tv/hQ9UsLn" target="_blank" title="哔哩哔哩"><i class="fab fa-bilibili"></i></a>
+                <span class="social-text"><span class="arrow">←</span>想要了解更多的我吗</span>
+            </div>
+            <div class="email-info" title="如果你有什么更好的建议的话，欢迎给我邮件">
+                <i class="fas fa-envelope"></i>
+                <span>482931540@qq.com</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 添加图片预览模态框 -->
+    <div class="image-preview-modal">
+        <div class="preview-content">
+            <button class="close-preview"><i class="fas fa-times"></i></button>
+            <img src="" alt="" class="preview-image">
+            <p class="preview-caption"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
